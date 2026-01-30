@@ -1,0 +1,647 @@
+/* AI Agent Page Specific Styles */
+/* This file fixes container-level issues caused by custom.css */
+
+/* Restore proper container behavior - allow Webflow's default container styles */
+.container-medium,
+.container-small,
+.container-large,
+.container-huge {
+  margin-right: auto;
+  margin-left: auto;
+  /* Remove !important to allow Webflow's responsive behavior */
+}
+
+/* Fix global section padding - restore original spacing */
+.global_section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  /* Remove !important to allow Webflow's responsive behavior */
+}
+
+.global_section--small {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  /* Remove !important to allow Webflow's responsive behavior */
+}
+
+.global_section--small.is-xl-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Ensure padding-global works correctly */
+.padding-global {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 479px) {
+  .padding-global {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 767px) {
+  .padding-global {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .padding-global {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* Fix product hero section */
+.product_hero {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.product_hero .padding-global {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.product_hero .container-large {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure proper layout wrapper behavior */
+.layouts_wr {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .side_layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .side_layout.with-quote {
+    gap: 2rem;
+  }
+}
+
+/* Align videos to start at the same top line as the paragraph text */
+/* The video should align with the paragraph, not the heading */
+.side_img-wr {
+  align-self: flex-start;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Calculate offset to align video with paragraph start */
+/* Heading: font-size 2.50rem with line-height ~1.2 = ~3.0rem, plus margin-bottom 1.5rem = ~4.5rem */
+/* But we need to account for actual rendered height, so using a more precise calculation */
+.side_layout.with-quote .side_text-wr h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Default: Offset video container to match paragraph top position */
+.side_layout.with-quote .side_img-wr {
+  margin-top: calc(2.50rem * 1.2 + 1.5rem);
+}
+
+/* Products 1 and 3 (ALPR Platform and Layered Security & Privacy) - align to start (no offset) */
+/* Product 1: ALPR Platform - video comes after text */
+.side_layout.with-quote
+  .side_text-wr.with-quote
+  + .side_img-wr:has([pr-video="alpr"]) {
+  margin-top: 0 !important;
+}
+
+/* Product 3: Layered Security & Privacy - using data-w-id for specificity */
+.side_layout.with-quote
+  [data-w-id="8ac60024-2f8b-b0d3-e6f1-274a5026503a"].side_img-wr {
+  margin-top: 0 !important;
+}
+
+/* Products 2 and 4 (Unified Dashboard and Edge Applications) - keep paragraph alignment */
+/* Product 2: Unified Dashboard - video comes before text, so it should align with paragraph */
+.side_layout.with-quote .side_img-wr:first-child:has([pr-video="one"]) {
+  margin-top: 0 !important;
+}
+
+/* Product 4: Edge Applications - using data-w-id for specificity */
+.side_layout.with-quote
+  [data-w-id="05d82eaa-8ec9-828e-09c3-1e20995b601e"].side_img-wr {
+  margin-top: 0 !important;
+}
+
+/* Ensure video container has no extra spacing */
+.side_img-wr .video_container {
+  margin-top: 0;
+  padding-top: 0;
+  align-self: flex-start;
+}
+
+/* Product buttons arrow styling - match Contact Us button style */
+.side_text-wr .btn_comp .arrow-wr {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+.side_text-wr .btn_comp .arrow-wr .arrow-icon.is-small {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  width: 24px !important;
+  height: 24px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.side_text-wr .btn_comp .arrow-wr .arrow-icon.is-small.w-embed {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.side_text-wr .btn_comp .arrow-wr .arrow-icon.is-small svg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: 0 !important;
+}
+
+.side_text-wr {
+  align-self: flex-start;
+}
+
+/* Fix main wrapper */
+.main-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.frame-section_wr {
+  width: 100%;
+}
+
+/* Ensure proper text alignment */
+.text-center {
+  text-align: center;
+}
+
+/* Fix button group alignment */
+.button-group.is-platform {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .button-group.is-platform {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+}
+
+/* Fix CTA section */
+.cta.is-dark {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.cta.is-dark .container-large {
+  width: 100%;
+  max-width: 100%;
+}
+
+.footer_nav-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 6rem;
+  justify-content: center;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .footer_nav-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Fix icon cards layout */
+.icon-cards_layout.is-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 991px) {
+  .icon-cards_layout.is-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .icon-cards_layout.is-3col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ensure proper spacing for product hero content - add top padding inside dark background */
+.product_hero_content-wr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .product_hero_content-wr {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Fix agent embed wrapper */
+.agent_embed {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+#virtual-agent-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.icon-card_icon-wr.is-careers {
+  background-color: #5e17eb;
+  box-shadow: none;
+  background-image: none;
+  top: -2.5rem;
+  left: auto;
+  right: auto;
+}
+
+.key-benifts {
+  background-color: #ffffff;
+}
+
+.side_text-wr {
+  grid-column-gap: 2rem;
+  /* grid-row-gap: 2rem; */
+  grid-row-gap: 0px !important;
+  flex-flow: column;
+  flex: 0 auto;
+  justify-content: flex-start;
+  align-self: center;
+  align-items: flex-start;
+  max-width: 27.375rem;
+  display: flex;
+}
+
+/* Navbar scroll behavior - minimize/maximize on scroll */
+.header.is-compact {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  transition: padding 0.3s ease;
+}
+
+.header.is-compact .header__container {
+  max-width: 100%;
+}
+
+.header.is-compact .nav__menu a,
+.header.is-compact .nav__menu .nav__dd-trigger,
+.header.is-compact .nav__menu .nav__list-item {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.header.is-compact .nav__menu {
+  gap: 0.75rem;
+}
+
+.header:not(.is-compact) .header__brand img {
+  transition: max-height 0.3s ease;
+}
+
+/* Feature Deep Dive Section */
+.feature-deep-dive-section {
+  position: relative;
+  padding: 3rem 0;
+  margin: 1rem;
+}
+
+.feature-deep-dive-section::before {
+  display: none; /* Remove the 50% background overlay - background is now only on the text container */
+}
+
+.feature-deep-dive-section > .padding-global {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-deep-dive-section > .padding-global > .container-large > div {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .feature-deep-dive-section > .padding-global > .container-large > div > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Splash Screen Styles */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+}
+
+.splash-screen.fade-out {
+  animation: fadeOutScale 0.6s ease-in forwards;
+}
+
+.splash-screen__logo {
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.splash-screen.fade-out .splash-screen__logo {
+  animation: logoFadeOut 0.6s ease-in forwards;
+}
+
+.splash-screen__logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 60px rgba(255, 255, 255, 0.3)) brightness(1.1) contrast(1.1);
+}
+
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+  }
+}
+
+@keyframes logoFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+    filter: blur(8px);
+  }
+}
+
+.card-text {
+  color: #000000;
+  font-size: 1.2rem !important;
+  line-height: 1.2 !important;
+}
+/* GRID */
+    .product_hero_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* VIDEO CONTAINER */
+    .product_hero_video {
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    /* VIDEO */
+    .product_hero_video video {
+      width: 100%;
+      height: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      display: block;
+    }
+
+    .product_hero_video img {
+      width: 100%;
+      height: 100%;
+      max-height: 370px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    /* OVERLAY CARD - CENTERED HORIZONTALLY, TOP POSITIONED */
+    .product_hero_video-overlay {
+     position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    text-align: center;
+    width: 98%;
+    }
+
+    /* OVERLAY TEXT */
+    .product_hero_video-overlay h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+    }
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .product_hero_grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .product_hero_video video {
+    max-height: 300px;
+  }
+
+  .product_hero_content-wr {
+    text-align: center;
+    margin: 0 auto;
+  }
+  /* OVERLAY TEXT */
+    .product_hero_video-overlay h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+    }
+     /* OVERLAY CARD - CENTERED HORIZONTALLY, TOP POSITIONED */
+    .product_hero_video-overlay {
+     position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    text-align: center;
+    width: 98%;
+    }
+}
+.product_hero_video {
+  position: relative;
+}
+
+/* Alert Overlay Text for Unified Dashboard Video - Same as index.html */
+.alert-overlay-text {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+/* Hide alert when image is active */
+.video-slider-container:has(img.image-slide.active) .alert-overlay-text {
+  opacity: 0 !important;
+}
+
+/* Show alert overlay only when video element (not image) is active */
+.video-slider-container:has(video.video-slide.active) .alert-overlay-text {
+  opacity: 1 !important;
+}
+
+/* Fallback: Show when video element with active class exists */
+.video-slider-container video.video-slide.active ~ .alert-overlay-text {
+  opacity: 1 !important;
+}
+
+/* Hide when image is active (fallback) */
+.video-slider-container img.image-slide.active ~ .alert-overlay-text {
+  opacity: 0 !important;
+}
+
+.alert-overlay-text span {
+  display: inline-block;
+  background-color: rgba(232, 72, 38, 0.95);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 3px solid #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Responsive adjustments for alert overlay */
+@media screen and (max-width: 991px) {
+  .alert-overlay-text span {
+    font-size: 1.5rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .alert-overlay-text {
+    bottom: 10%;
+  }
+  
+  .alert-overlay-text span {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    border-width: 2px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .alert-overlay-text {
+    bottom: 12%;
+  }
+  
+  .alert-overlay-text span {
+    font-size: 1rem;
+    padding: 0.5rem 0.875rem;
+    letter-spacing: 0.05em;
+  }
+}
