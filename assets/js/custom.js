@@ -1,6 +1,5 @@
 (function initializeSplash() {
   const splashScreen = document.getElementById("splash-screen");
-  const cookieBanner = document.getElementById("cookie-banner");
   const body = document.body;
 
   if (!splashScreen) return;
@@ -9,15 +8,14 @@
   const storage = {
     async get(key) {
       try {
-        const result = await window.storage.get(key);
-        return result ? result.value : null;
+        return localStorage.getItem(key);
       } catch (e) {
         return null;
       }
     },
     async set(key, value) {
       try {
-        await window.storage.set(key, value);
+        localStorage.setItem(key, value);
         return true;
       } catch (e) {
         return false;
@@ -25,7 +23,7 @@
     },
     async delete(key) {
       try {
-        await window.storage.delete(key);
+        localStorage.removeItem(key);
         return true;
       } catch (e) {
         return false;
@@ -49,7 +47,6 @@
   function skipSplash() {
     body.classList.add("splash-complete");
     splashScreen.remove();
-    showCookieBannerIfNeeded();
   }
 
   async function showSplashSequence() {
@@ -69,34 +66,8 @@
     await storage.set("homeSplashShown", "true");
     body.classList.add("splash-complete");
     splashScreen.remove();
-
-    // Show cookie banner
-    showCookieBannerIfNeeded();
   }
 
-  async function showCookieBannerIfNeeded() {
-    const cookieAccepted = await storage.get("cookieBannerAccepted");
-
-    if (cookieAccepted !== "true" && cookieBanner) {
-      setTimeout(() => {
-        cookieBanner.classList.add("show");
-      }, 300);
-    }
-  }
-
-  // Make functions globally accessible
-  window.acceptCookies = async function () {
-    await storage.set("cookieBannerAccepted", "true");
-    if (cookieBanner) {
-      cookieBanner.classList.remove("show");
-    }
-  };
-  window.declineCookies = async function () {
-    await storage.set("cookieBannerAccepted", "true");
-    if (cookieBanner) {
-      cookieBanner.classList.remove("show");
-    }
-  };
 
   window.resetSplash = async function () {
     await storage.delete("homeSplashShown");
@@ -371,17 +342,17 @@ document.addEventListener("DOMContentLoaded", () => {
   function createNewBox(box, plate, mac1280Box = null) {
     const boxEl = document.createElement("div");
     boxEl.className = "vehicle-detection-box fading-in";
-    
+
     // Check if Mac 1280px or smaller for positioning adjustments
     const isMac1280 = window.matchMedia("(max-width: 1280px)").matches;
-    
+
     // Use Mac 1280px box if available and screen matches, otherwise use desktop box
     const activeBox = (isMac1280 && mac1280Box) ? mac1280Box : box;
-    
+
     // Determine offsets based on plate and screen size
     let leftOffset = "0px";
     let topOffset = "3px";
-    
+
     if (isMac1280 && mac1280Box) {
       // Use Mac 1280px specific offsets
       leftOffset = mac1280Box.leftOffset || "-2px";
@@ -392,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
       leftOffset = isVolvoBus ? "12px" : "0px";
       topOffset = "3px";
     }
-    
+
     // Apply positioning
     boxEl.style.left = `calc(${activeBox.left * 100}% + ${leftOffset})`;
     boxEl.style.top = `calc(${activeBox.top * 100}% + ${topOffset})`;
@@ -434,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
     confidenceEl.textContent = result.confidence || vehicle.confidence;
     // Pass both desktop and Mac 1280px boxes
     drawOverlayBox(
-      result.box || vehicle.fallbackBox, 
+      result.box || vehicle.fallbackBox,
       plateText,
       vehicle.fallbackBoxMac1280 || null
     );
@@ -1239,6 +1210,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initCommunitySafetySlider();
 })();
-  window.addEventListener("load", () => {
-    document.getElementById("loader")?.remove();
-  });
+window.addEventListener("load", () => {
+  document.getElementById("loader")?.remove();
+});

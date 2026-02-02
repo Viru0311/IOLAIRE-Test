@@ -828,7 +828,7 @@
                             class="btn_comp w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89 w-inline-block"
                             data-wf-component-context="%5B%7B%22componentId%22%3A%228d6427e9-86bd-ce20-7879-4b430eb19b87%22%2C%22instanceId%22%3A%2250a3bdd0-24c4-a3e7-e7ec-d90b17a62556%22%7D%5D"
                             data-wf-element-id="8d6427e9-86bd-ce20-7879-4b430eb19b87"
-                            data-wf-event-ids="157056291-157059568" href="request-a-demo.html"
+                            data-wf-event-ids="157056291-157059568" href="calendar.html"
                             data-w-id="8d6427e9-86bd-ce20-7879-4b430eb19b87"
                             data-wf-native-id-path="50a3bdd0-24c4-a3e7-e7ec-d90b17a62556:8d6427e9-86bd-ce20-7879-4b430eb19b87"
                             data-wf-ao-click-engagement-tracking="true">
@@ -858,7 +858,7 @@
                       class="btn_comp w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89 w-inline-block"
                       data-wf-component-context="%5B%7B%22componentId%22%3A%228d6427e9-86bd-ce20-7879-4b430eb19b87%22%2C%22instanceId%22%3A%2250a3bdd0-24c4-a3e7-e7ec-d90b17a62556%22%7D%5D"
                       data-wf-element-id="8d6427e9-86bd-ce20-7879-4b430eb19b87" data-wf-event-ids="157056291-157059568"
-                      href="request-a-demo.html" data-w-id="8d6427e9-86bd-ce20-7879-4b430eb19b87"
+                      href="calendar.html" data-w-id="8d6427e9-86bd-ce20-7879-4b430eb19b87"
                       data-wf-native-id-path="50a3bdd0-24c4-a3e7-e7ec-d90b17a62556:8d6427e9-86bd-ce20-7879-4b430eb19b87"
                       data-wf-ao-click-engagement-tracking="true">
                       <div>Get a demo</div>
@@ -1568,7 +1568,7 @@
                           data-wf-ao-click-engagement-tracking="true"
                           data-wf-element-id="c3344dbe-d2c6-7a44-7197-4fa5896141ce"
                           data-wf-cms-context="%5B%7B%22collectionId%22%3A%2267feba4ef55f1470de5a46d7%22%2C%22itemId%22%3A%2267febb15a9335cefd3e6a64b%22%7D%5D"
-                          href="customers/snap-finance.html" class="button is-small w-inline-block">
+                          href="calendar.html" class="button is-small w-inline-block">
                           <div>Request a demo</div>
                           <div class="arrow-wr">
                             <div class="arrow-icon is-small w-embed"
@@ -3151,45 +3151,8 @@
   </div>
 </div> -->
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const banner = document.getElementById("cookie-banner");
-      const acceptBtn = document.getElementById("cookie-accept");
-      const rejectBtn = document.getElementById("cookie-reject");
 
-      if (!banner || !acceptBtn || !rejectBtn) return;
 
-      const COOKIE_KEY = "cookieConsent";
-
-      if (sessionStorage.getItem(COOKIE_KEY)) {
-        banner.style.display = "none";
-        return;
-      }
-
-      acceptBtn.addEventListener("click", () => {
-        sessionStorage.setItem(COOKIE_KEY, "accepted");
-        banner.style.display = "none";
-      });
-
-      rejectBtn.addEventListener("click", () => {
-        sessionStorage.setItem(COOKIE_KEY, "rejected");
-        banner.style.display = "none";
-      });
-    });
-  </script>
-  <!-- Cookie Banner - FIXED -->
-  <div id="cookie-banner">
-    <p>
-      We use cookies to improve your experience.
-      <a href="privacy-policy.html"
-        style="pointer-events: auto; cursor: pointer; -webkit-tap-highlight-color: rgba(107, 60, 255, 0.2);">Learn
-        more</a>
-    </p>
-    <div class="cookie-actions">
-      <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
-      <button class="cookie-reject" onclick="declineCookies()">Decline</button>
-    </div>
-  </div>
 
   <!-- Coming Soon Popup -->
   <div id="coming-soon-popup" class="coming-soon-popup">
@@ -3510,6 +3473,325 @@
       }
     }
   </style>
+
+  <style>
+    /* Premium Cookie Preferences Modal Styles */
+    #cookie-preferences-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      z-index: 2147483647;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cookie-preferences-modal {
+      background: #fff;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      animation: modalFadeIn 0.3s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cookie-preferences-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .cookie-preferences-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .cookie-preferences-desc a {
+      color: #5e17eb;
+      text-decoration: underline;
+    }
+
+    .cookie-preference-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .cookie-preference-item:last-of-type {
+      border-bottom: 1px solid #f0f0f0;
+      margin-bottom: 32px;
+    }
+
+    .cookie-preference-info {
+      flex: 1;
+    }
+
+    .cookie-preference-name {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .cookie-preference-detail {
+      display: block;
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* Toggle Switch Styles */
+    .cookie-toggle {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+    }
+
+    .cookie-toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .cookie-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #e0e0e0;
+      transition: .3s;
+      border-radius: 24px;
+    }
+
+    .cookie-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked+.cookie-slider {
+      background-color: #5e17eb;
+    }
+
+    input:checked+.cookie-slider:before {
+      transform: translateX(24px);
+    }
+
+    .cookie-toggle.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Button Styles */
+    .cookie-modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-modal-btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cookie-modal-btn.btn-reject {
+      background: none;
+      border: 1px solid #ddd;
+      color: #666;
+    }
+
+    .cookie-modal-btn.btn-reject:hover {
+      background: #f8f8f8;
+      border-color: #ccc;
+    }
+
+    .cookie-modal-btn.btn-save {
+      background: none;
+      border: 1px solid #5e17eb;
+      color: #5e17eb;
+    }
+
+    .cookie-modal-btn.btn-save:hover {
+      background: #f5f0ff;
+    }
+
+    .cookie-modal-btn.btn-accept {
+      background: #5e17eb;
+      border: 1px solid #5e17eb;
+      color: #fff;
+    }
+
+    .cookie-modal-btn.btn-accept:hover {
+      background: #4a10c1;
+      box-shadow: 0 4px 12px rgba(94, 23, 235, 0.2);
+    }
+
+    @media (max-width: 480px) {
+      .cookie-preferences-modal {
+        padding: 24px;
+      }
+
+      .cookie-modal-buttons {
+        flex-direction: column;
+      }
+
+      .cookie-modal-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <div id="cookie-preferences-wrapper">
+    <div class="cookie-preferences-modal">
+      <h2 class="cookie-preferences-title">Cookie Preferences</h2>
+      <p class="cookie-preferences-desc">
+        We use cookies to improve your experience. You can customize your preferences below.
+        <a href="privacy-policy.html">Learn more</a>
+      </p>
+
+      <div class="cookie-preference-item">
+        <div class="cookie-preference-info">
+          <span class="cookie-preference-name">Essential Cookies</span>
+          <span class="cookie-preference-detail">Strictly necessary for the website to function.</span>
+        </div>
+        <label class="cookie-toggle disabled">
+          <input type="checkbox" checked disabled>
+          <span class="cookie-slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-preference-item">
+        <div class="cookie-preference-info">
+          <span class="cookie-preference-name">Analytics Cookies</span>
+          <span class="cookie-preference-detail">Help us understand how you use our site.</span>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookie-analytics">
+          <span class="cookie-slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-preference-item">
+        <div class="cookie-preference-info">
+          <span class="cookie-preference-name">Marketing Cookies</span>
+          <span class="cookie-preference-detail">Used to deliver relevant advertisements.</span>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookie-marketing">
+          <span class="cookie-slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal-buttons">
+        <button class="cookie-modal-btn btn-reject" onclick="handleCookieAction('reject')">Reject All</button>
+        <button class="cookie-modal-btn btn-save" onclick="handleCookieAction('save')">Save Preferences</button>
+        <button class="cookie-modal-btn btn-accept" onclick="handleCookieAction('accept')">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function manageCookiePreferences() {
+      const STORAGE_KEY = 'iolaire_cookie_preferences';
+      const wrapper = document.getElementById('cookie-preferences-wrapper');
+      const analyticsToggle = document.getElementById('cookie-analytics');
+      const marketingToggle = document.getElementById('cookie-marketing');
+      const splashScreen = document.getElementById('splash-screen');
+
+      function revealSite() {
+        if (wrapper) wrapper.style.display = 'none';
+
+        // Use a more forceful reveal
+        if (splashScreen) {
+          splashScreen.style.display = 'none';
+          splashScreen.style.opacity = '0';
+          splashScreen.style.zIndex = '-1';
+        }
+
+        document.body.style.overflow = 'auto';
+        document.body.classList.add('splash-complete');
+        document.body.classList.add('login-gate-authenticated');
+      }
+
+      window.handleCookieAction = function (action) {
+        let prefs = { essential: true, analytics: false, marketing: false };
+
+        if (action === 'accept') {
+          prefs.analytics = true;
+          prefs.marketing = true;
+        } else if (action === 'save') {
+          prefs.analytics = analyticsToggle.checked;
+          prefs.marketing = marketingToggle.checked;
+        }
+        // 'reject' keeps the default (false for optional)
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+        revealSite();
+      };
+
+      // Initialization check
+      function init() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          if (wrapper) wrapper.style.display = 'none';
+          // Ensure classes are added if already consented
+          document.body.classList.add('splash-complete');
+          document.body.classList.add('login-gate-authenticated');
+        } else {
+          // Show modal after a small delay to ensure it's on top of splash
+          setTimeout(() => {
+            if (wrapper) wrapper.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }, 500);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 
 </body>
 

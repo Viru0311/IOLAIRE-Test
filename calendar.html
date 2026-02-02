@@ -86,7 +86,7 @@
         }
 
         .calendar-hero {
-            padding: 6rem 2rem 3rem;
+            padding: 1rem 1rem 0.5rem;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -94,10 +94,10 @@
 
         .calendar-hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #1a1a3a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.25rem;
             background: linear-gradient(135deg, #1a1a3a 0%, #5e17eb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -113,12 +113,12 @@
         }
 
         .calendar-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0.5rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 1rem;
             position: relative;
             z-index: 1;
         }
@@ -138,8 +138,8 @@
         .calendar-widget {
             background: #ffffff;
             border: 1px solid #e5e7eb;
-            border-radius: 24px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 1rem;
             box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
         }
 
@@ -147,7 +147,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .calendar-title {
@@ -184,7 +184,7 @@
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
+            gap: 4px;
         }
 
         .calendar-day-header {
@@ -203,7 +203,7 @@
             align-items: center;
             justify-content: center;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: #374151;
             border-radius: 12px;
@@ -238,8 +238,8 @@
 
         /* Time Slots */
         .time-slots-section {
-            margin-top: 2rem;
-            padding-top: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
             border-top: 1px solid #e5e7eb;
         }
 
@@ -300,8 +300,8 @@
         .booking-form {
             background: #ffffff;
             border: 1px solid #e5e7eb;
-            border-radius: 24px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 1rem;
             box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
         }
 
@@ -321,7 +321,7 @@
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .form-label {
@@ -337,8 +337,8 @@
         .form-select,
         .form-textarea {
             width: 100%;
-            padding: 1rem 1.25rem;
-            border-radius: 12px;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
             background: #f9fafb;
             border: 1px solid #e5e7eb;
             font-family: 'Poppins', sans-serif;
@@ -378,7 +378,7 @@
 
         .form-textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 60px;
         }
 
         .form-row {
@@ -444,7 +444,7 @@
         /* Submit Button */
         .submit-btn {
             width: 100%;
-            padding: 1.25rem 2rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 16px;
             background: linear-gradient(135deg, #5e17eb 0%, #7c3aed 100%);
             border: none;
@@ -556,70 +556,115 @@
             background: #e5e7eb;
         }
 
-        /* Features Section */
-        .features-section {
-            padding: 4rem 2rem;
-            position: relative;
-            z-index: 1;
-            background: #f9fafb;
-            margin-top: 4rem;
+        /* Footer Legal Links - Download Icon Styles */
+        .footer_legal-link-wrapper {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 1rem;
         }
 
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        @media (max-width: 767px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .feature-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(94, 23, 235, 0.1) 0%, rgba(94, 23, 235, 0.05) 100%);
-            display: flex;
+        .footer_legal-download-icon {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-            color: #5e17eb;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            position: relative;
+            text-decoration: none;
+            line-height: 1;
         }
 
-        .feature-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1a1a3a;
+        .footer_legal-download-icon img {
+            width: 40px;
+            height: 25px;
+            display: block;
+            opacity: 0.7;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .footer_legal-download-icon:hover img {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .footer_legal-download-icon:active img {
+            transform: translateY(0);
+        }
+
+        .footer_legal-download-icon:focus {
+            outline: 2px solid #5e17eb;
+            outline-offset: 2px;
+        }
+
+        /* Tooltip */
+        .footer_legal-download-icon::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
             margin-bottom: 0.5rem;
+            padding: 0.375rem 0.625rem;
+            background-color: #25252a;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-family: "Poppins", sans-serif;
+            white-space: nowrap;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+            transform: translateX(-50%) translateY(-4px);
+            z-index: 1000;
         }
 
-        .feature-text {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
-            color: #666666;
-            line-height: 1.6;
+        .footer_legal-download-icon::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 0.25rem;
+            border: 4px solid transparent;
+            border-top-color: #25252a;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            z-index: 1000;
+        }
+
+        .footer_legal-download-icon:hover::after,
+        .footer_legal-download-icon:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .footer_legal-download-icon:hover::after {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Ensure proper spacing between links */
+        .footer_legal-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 767px) {
+            .footer_legal-link-wrapper {
+                margin-right: 0.75rem;
+            }
+
+            .footer_legal-download-icon img {
+                width: 14px;
+                height: 14px;
+            }
         }
     </style>
 </head>
@@ -983,42 +1028,168 @@
             </div>
 
             <!-- Features Section -->
-            <div class="features-section">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-video"></i>
+
+        </main>
+
+        <footer class="footer" style="background-color: #0b1220;">
+            <div class="footer_top-wr">
+                <div class="padding-global">
+                    <div class="container-large">
+                        <div class="footer_nav-grid">
+
+                            <div id="w-node-_86b1aeeb-f641-1ea7-f00c-7f748913bb2b-8913bb24" class="footer_nav">
+                                <div class="footer_group">
+                                    <div class="footer_nav-heading">Products</div>
+                                    <div class="footer_links">
+                                        <a href="alpr-platform.html" class="footer_link w-inline-block">
+                                            <div>ALPR Platform</div>
+                                        </a><a href="unified-dashboard.html" class="footer_link w-inline-block">
+                                            <div>Unified Dashboard</div>
+                                        </a><a href="layered-security-privacy.html" class="footer_link w-inline-block">
+                                            <div>Layered Security & Privacy</div>
+                                        </a><a href="edge-application.html" class="footer_link w-inline-block">
+                                            <div>Edge Applications</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="footer_group">
+                                    <div class="footer_nav-heading">Company</div>
+                                    <div class="footer_links">
+                                        <a href="about-us.html" class="footer_link w-inline-block">
+                                            <div>About Us</div>
+                                        </a><a href="careers.html" class="footer_link w-inline-block">
+                                            <div>Careers</div>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="w-node-_9cb56306-6ddc-930a-318a-4747d312d8f2-8913bb24">
+                                <a href="index.html" aria-current="page"
+                                    class="footer_brand w-inline-block w--current"><img
+                                        src="assets/IOLAIRE.AI/New/Logo-with-Text-Color.png" loading="lazy"
+                                        alt="IOLAIRE.AI  logo" class="footer-logo-purple" /></a>
+                                <div class="soc-links">
+                                    <span aria-label="x account" class="soc_link"
+                                        style="pointer-events: none; cursor: default;">
+                                        <div class="soc_icon is-md w-embed">
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_8646_26729)">
+                                                    <path
+                                                        d="M9.6768 6.9585L15.5051 0.183594H14.124L9.06327 6.06615L5.0213 0.183594H0.359375L6.47162 9.07906L0.359375 16.1836H1.74057L7.0848 9.97141L11.3534 16.1836H16.0153L9.67646 6.9585H9.6768ZM7.78506 9.15743L7.16576 8.27165L2.23823 1.22333H4.35967L8.33624 6.91155L8.95554 7.79733L14.1246 15.1911H12.0032L7.78506 9.15777V9.15743Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_8646_26729">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.1875 0.183594)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </span><span aria-label="linkedIn account" class="soc_link"
+                                        style="pointer-events: none; cursor: default;">
+                                        <div class="soc_icon is-md w-embed">
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_8646_26732)">
+                                                    <path
+                                                        d="M2.45431 0.546875C1.3916 0.546875 0.531422 1.4086 0.53125 2.4689C0.53125 3.53024 1.39143 4.39179 2.45448 4.39179C3.51462 4.39179 4.376 3.53024 4.376 2.4689C4.376 1.40843 3.51444 0.546875 2.45431 0.546875Z"
+                                                        fill="white" />
+                                                    <path d="M0.796875 5.85156H4.11293V16.5206H0.796875V5.85156Z"
+                                                        fill="white" />
+                                                    <path
+                                                        d="M12.5577 5.58594C10.9446 5.58594 9.86297 6.47036 9.42024 7.30904H9.37588V5.85123H6.19548H6.19531V16.5201H9.50844V11.2422C9.50844 9.85071 9.77339 8.50294 11.4986 8.50294C13.199 8.50294 13.2217 10.0943 13.2217 11.3314V16.52H16.5353V10.6681C16.5353 7.79561 15.9155 5.58594 12.5577 5.58594Z"
+                                                        fill="white" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_8646_26732">
+                                                        <rect width="16" height="16" fill="white"
+                                                            transform="translate(0.53125 0.53125)" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </span><span aria-label="youTube account" class="soc_link"
+                                        style="pointer-events: none; cursor: default;">
+                                        <div class="soc_icon w-embed">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M14.7642 13.3157L11.0922 15.3221C10.9392 15.4018 10.7752 15.4411 10.6132 15.4411C10.4402 15.4411 10.2692 15.396 10.1152 15.3077C9.81913 15.1387 9.64213 14.8421 9.64213 14.5118V10.4981C9.64213 10.1621 9.82413 9.85877 10.1282 9.69077C10.4302 9.52277 10.7902 9.52085 11.0942 9.68885L14.7642 11.6952C15.0662 11.8584 15.2542 12.1704 15.2542 12.5045C15.2542 12.8405 15.0662 13.1506 14.7642 13.3157ZM21.0622 7.57301C20.8032 6.54581 19.9952 5.72405 18.9542 5.42357C17.1872 4.86389 6.66613 4.89557 5.05413 5.45717C4.00913 5.74325 3.19613 6.56885 2.94513 7.56917C2.35313 9.23093 2.35313 15.8002 2.93613 17.4437C3.22613 18.4469 4.03813 19.2408 5.02113 19.5029C5.88613 19.8043 8.97513 19.9531 12.0462 19.9531C15.0972 19.9531 18.1322 19.8062 18.9462 19.5125C19.9912 19.2149 20.8022 18.3902 21.0492 17.4053C21.6392 15.7752 21.6412 9.22325 21.0622 7.57301Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="feature-title">Live Demo</h3>
-                        <p class="feature-text">Get a personalized walkthrough of our Vision AI platform tailored to
-                            your industry needs.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
+                        <div class="footer_offices-wr">
+                            <div class="footer_offices_layout">
+                                <div class="footer_office-wr is-1">
+                                    <img src="https://cdn.prod.website-files.com/67fe49bf21b9f9d5b910d3c9/688a30a8a5aa47847e3f0249_usa-flag.avif"
+                                        loading="lazy" width="22.5" height="16" alt="Flag of the USA"
+                                        class="footer_flag" />
+                                    <p class="ts-p--small tc-white">
+                                        San Jose, California
+                                    </p>
+                                </div>
+                                <div class="footer_offices-separater"></div>
+                                <div class="footer_office-wr is-2">
+                                    <img src="https://cdn.prod.website-files.com/67fe49bf21b9f9d5b910d3c9/688a30a8a5aa47847e3f0249_usa-flag.avif"
+                                        loading="lazy" width="22.5" height="16" alt="Flag of the USA"
+                                        class="footer_flag" />
+                                    <p class="ts-p--small tc-white">
+                                        Dallas, Texas
+                                    </p>
+                                </div>
+                                <div class="footer_offices-separater"></div>
+                                <div class="footer_office-wr">
+                                    <img src="https://cdn.prod.website-files.com/67fe49bf21b9f9d5b910d3c9/688a30a8724ec39fb67b8301_india-flag.png"
+                                        loading="lazy" width="22.5" height="16" alt="Flag of India" class="footer_flag"
+                                        onerror="this.src='https://flagcdn.com/w40/in.png'; this.onerror=null;" />
+                                    <p class="ts-p--small tc-white">
+                                        Bangalore, India
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="feature-title">Expert Consultation</h3>
-                        <p class="feature-text">Speak directly with our AI specialists who understand your challenges.
-                        </p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="feature-title">Custom Solutions</h3>
-                        <p class="feature-text">Explore how we can customize our platform to meet your specific
-                            requirements.</p>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer"
-            style="background: #0a0a1a; padding: 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p style="font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.5);">
-                © 2026 IOLAIRE.AI. All rights reserved.
-            </p>
+            <div class="footer_bottom-wr">
+                <div class="padding-global">
+                    <div class="footer_bottom_layout">
+                        <div class="ts-p--small tc-white">© 2025 IOLAIRE.AI </div>
+                        <div class="footer_legal-links">
+                            <div class="footer_legal-link-wrapper">
+                                <a href="terms-of-service.html" class="footer_legal-link w-inline-block">
+                                    <div>Terms of Service</div>
+                                </a>
+                                <a href="assets/Terms-of-Service.pdf" download="Terms-of-Service.pdf"
+                                    class="footer_legal-download-icon" aria-label="Download Terms of Service PDF"
+                                    data-tooltip="Download Terms">
+                                    <img src="assets/download-icon.png" alt="Download Terms" />
+                                </a>
+                            </div>
+                            <div class="footer_legal-link-wrapper">
+                                <a href="privacy-policy.html" class="footer_legal-link w-inline-block">
+                                    <div>Privacy Policy</div>
+                                </a>
+                                <a href="assets/Privacy-Policy.pdf" download="Privacy-Policy.pdf"
+                                    class="footer_legal-download-icon" aria-label="Download Privacy Policy PDF"
+                                    data-tooltip="Download Policy">
+                                    <img src="assets/download-icon.png" alt="Download Policy" />
+                                </a>
+                            </div>
+                            <a href="privacy-settings.html" class="footer_legal-link w-inline-block">
+                                <div>Privacy Settings</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
