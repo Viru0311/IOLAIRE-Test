@@ -733,150 +733,93 @@
     </div>
     <main class="main-wrapper is-homepage">
       <div class="frame-section_wr is-hero">
-        <section data-w-id="46535467-06d7-a66b-9ef5-b78f3f6625ad" class="global_section--small is-hero"
-          style="position: relative">
-          <div class="hero_bg-vid w-embed" style="
-                background-image: url('./assets/Banner/hero-banner.jpg');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-color: #0b1220;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 0;
-              "></div>
-          <div id="vehicle-detection-overlay" class="vehicle-detection-overlay"></div>
-
-
-          <div class="padding-global" style="position: relative; z-index: 1">
-            <div class="hero_wr">
-              <div class="hero-logo_wr">
-                <div class="vehicle-detection-card" id="anpr-card">
-                  <div class="vehicle-card-top">
-                    <div class="vehicle-card-left">
-                      <div class="license-plate-display">
-                        <div class="plate-number js-plate-number">--</div>
-                        <div class="plate-region js-plate-region">--</div>
-                      </div>
-                      <div class="anpr-inline">
-                        <div class="anpr-status js-anpr-status">
-                          Pending detection
-                        </div>
+        <section data-w-id="46535467-06d7-a66b-9ef5-b78f3f6625ad" class="global_section--small is-hero hero-content-only" style="position: relative">
+          <div class="padding-global">
+            <div class="hero_wr hero_wr--centered">
+              <div class="hero-content-wrapper">
+                <h1 class="hero-title">
+                  <span class="hero-highlight">Vision AI Platform</span>
+                  <span class="span_line-2">Advancing the future of safety for every resident</span>
+                </h1>
+                <p class="hero-description">We leverage the power of AI to deliver Safety Enforcement where people can live, work, and play at ease.</p>
+                <div class="hero-cta">
+                  <a data-wf--button--variant="blue-arrow-48" class="btn_comp w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89 w-inline-block" href="calendar.html" data-wf-ao-click-engagement-tracking="true">
+                    <div>Get a demo</div>
+                    <div class="arrow-wr w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89">
+                      <div class="arrow-icon_comp w-embed">
+                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 7L7 1M7 1H1M7 1V7" stroke="currentcolor" />
+                        </svg>
                       </div>
                     </div>
-                    <div class="vehicle-details-compact">
-                      <div class="detail-line">
-                        <span class="detail-label">Vehicle Model:</span>
-                        <span class="detail-value js-vehicle-model">--</span>
-                      </div>
-                      <div class="detail-line">
-                        <span class="detail-label">Vehicle Make:</span>
-                        <span class="detail-value js-vehicle-make">--</span>
-                      </div>
-                      <div class="detail-line">
-                        <span class="detail-label">Vehicle Color:</span>
-                        <span class="detail-value js-vehicle-color">--</span>
-                      </div>
-                      <div class="detail-line">
-                        <span class="detail-label">Direction:</span>
-                        <span class="detail-value js-vehicle-direction">--</span>
-                      </div>
-                      <div class="detail-line">
-                        <span class="detail-label">Confidence:</span>
-                        <span class="detail-value js-vehicle-confidence">--</span>
-                      </div>
-                    </div>
-                  </div>
-                  <style>
-                    /* Smooth transitions for card values */
-                    .vehicle-card-top .detail-value,
-                    .vehicle-card-top .plate-number,
-                    .vehicle-card-top .plate-region {
-                      transition: opacity 260ms ease, transform 260ms ease;
-                      will-change: opacity, transform;
-                    }
-
-                    .vehicle-card-top.is-updating .detail-value,
-                    .vehicle-card-top.is-updating .plate-number,
-                    .vehicle-card-top.is-updating .plate-region {
-                      opacity: 0;
-                      transform: translateY(-6px);
-                    }
-
-                    /* Smoothly animate overlay box movement/resize */
-                    .vehicle-detection-box {
-                      transition: left 360ms cubic-bezier(0.2, 0.9, 0.2, 1),
-                        top 360ms cubic-bezier(0.2, 0.9, 0.2, 1),
-                        width 360ms cubic-bezier(0.2, 0.9, 0.2, 1),
-                        height 360ms cubic-bezier(0.2, 0.9, 0.2, 1),
-                        opacity 260ms ease;
-                    }
-                  </style>
-                </div>
-              </div>
-              <div class="hero-content-wrapper" style="position: relative; z-index: 2;">
-                <div style="padding: 0.5rem; background: rgba(0, 0, 0, 0.5); border-radius: 10px; width: 100%;">
-                  <h1 class="hero-title">
-                    <span class="hero-highlight-wr"><span class="hero-highlight-list">
-                        <span class="hero-highlight"
-                          style="background-color: transparent; color: white; border-radius: 4px; margin-top:5px; display: inline-block; text-align: center;">
-                          Vision AI Platform</span> <!-- Book a slot button on road area -->
-                        <div class="camera-button-wrapper">
-                          <a data-wf--button--variant="blue-arrow-48"
-                            class="btn_comp w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89 w-inline-block"
-                            data-wf-component-context="%5B%7B%22componentId%22%3A%228d6427e9-86bd-ce20-7879-4b430eb19b87%22%2C%22instanceId%22%3A%2250a3bdd0-24c4-a3e7-e7ec-d90b17a62556%22%7D%5D"
-                            data-wf-element-id="8d6427e9-86bd-ce20-7879-4b430eb19b87"
-                            data-wf-event-ids="157056291-157059568" href="calendar.html"
-                            data-w-id="8d6427e9-86bd-ce20-7879-4b430eb19b87"
-                            data-wf-native-id-path="50a3bdd0-24c4-a3e7-e7ec-d90b17a62556:8d6427e9-86bd-ce20-7879-4b430eb19b87"
-                            data-wf-ao-click-engagement-tracking="true">
-                            <div>Get a demo</div>
-                            <div class="arrow-wr w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89">
-                              <div class="arrow-icon_comp w-embed">
-                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
-                                  xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M1 7L7 1M7 1H1M7 1V7" stroke="currentcolor" />
-                                </svg>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </span>
-                    </span>
-                    <span class="span_line-2">Advancing the future of safety for every resident</span>
-                  </h1>
-                  <p class="tc-white">
-                    We leverage the power of AI to deliver Safety Enforcement where people can <br
-                      class='hiding-for-mac'> live, work, and play
-                    at ease.
-                  </p>
-                  <!-- Mobile-only Get a demo button -->
-                  <div class="hero-mobile-demo-button">
-                    <a data-wf--button--variant="blue-arrow-48"
-                      class="btn_comp w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89 w-inline-block"
-                      data-wf-component-context="%5B%7B%22componentId%22%3A%228d6427e9-86bd-ce20-7879-4b430eb19b87%22%2C%22instanceId%22%3A%2250a3bdd0-24c4-a3e7-e7ec-d90b17a62556%22%7D%5D"
-                      data-wf-element-id="8d6427e9-86bd-ce20-7879-4b430eb19b87" data-wf-event-ids="157056291-157059568"
-                      href="calendar.html" data-w-id="8d6427e9-86bd-ce20-7879-4b430eb19b87"
-                      data-wf-native-id-path="50a3bdd0-24c4-a3e7-e7ec-d90b17a62556:8d6427e9-86bd-ce20-7879-4b430eb19b87"
-                      data-wf-ao-click-engagement-tracking="true">
-                      <div>Get a demo</div>
-                      <div class="arrow-wr w-variant-f80ff6d7-747e-c2dd-603f-7060a388fb89">
-                        <div class="arrow-icon_comp w-embed">
-                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 7L7 1M7 1H1M7 1V7" stroke="currentcolor" />
-                          </svg>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
       </div>
+      <!-- Demo section: image + vehicle detection overlay + ANPR card -->
+      <section class="demo-image-section" aria-label="Vision AI demo">
+        <div class="demo-image-section__inner">
+          <div class="demo-image-section__bg" style="background-image: url('./assets/Banner/hero-banner.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #0b1220;"></div>
+          <div id="vehicle-detection-overlay" class="vehicle-detection-overlay"></div>
+          <div class="demo-image-section__card">
+            <div class="vehicle-detection-card" id="anpr-card">
+              <div class="vehicle-card-top">
+                <div class="vehicle-card-left">
+                  <div class="license-plate-display">
+                    <div class="plate-number js-plate-number">--</div>
+                    <div class="plate-region js-plate-region">--</div>
+                  </div>
+                  <div class="anpr-inline">
+                    <div class="anpr-status js-anpr-status">Pending detection</div>
+                  </div>
+                </div>
+                <div class="vehicle-details-compact">
+                  <div class="detail-line">
+                    <span class="detail-label">Vehicle Model:</span>
+                    <span class="detail-value js-vehicle-model">--</span>
+                  </div>
+                  <div class="detail-line">
+                    <span class="detail-label">Vehicle Make:</span>
+                    <span class="detail-value js-vehicle-make">--</span>
+                  </div>
+                  <div class="detail-line">
+                    <span class="detail-label">Vehicle Color:</span>
+                    <span class="detail-value js-vehicle-color">--</span>
+                  </div>
+                  <div class="detail-line">
+                    <span class="detail-label">Direction:</span>
+                    <span class="detail-value js-vehicle-direction">--</span>
+                  </div>
+                  <div class="detail-line">
+                    <span class="detail-label">Confidence:</span>
+                    <span class="detail-value js-vehicle-confidence">--</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <style>
+          .vehicle-card-top .detail-value,
+          .vehicle-card-top .plate-number,
+          .vehicle-card-top .plate-region {
+            transition: opacity 260ms ease, transform 260ms ease;
+            will-change: opacity, transform;
+          }
+          .vehicle-card-top.is-updating .detail-value,
+          .vehicle-card-top.is-updating .plate-number,
+          .vehicle-card-top.is-updating .plate-region {
+            opacity: 0;
+            transform: translateY(-6px);
+          }
+          .vehicle-detection-box {
+            transition: left 360ms cubic-bezier(0.2, 0.9, 0.2, 1), top 360ms cubic-bezier(0.2, 0.9, 0.2, 1), width 360ms cubic-bezier(0.2, 0.9, 0.2, 1), height 360ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 260ms ease;
+          }
+        </style>
+      </section>
       <section data-w-id="79efd1bc-d233-b100-fc21-ac9c89fbaea4" class="products_section">
         <div class="products_bg"></div>
         <div class="padding-global" style="padding-left: 0; padding-right: 0;">
@@ -3705,7 +3648,7 @@
           <span class="cookie-preference-detail">Help us understand how you use our site.</span>
         </div>
         <label class="cookie-toggle">
-          <input type="checkbox" id="cookie-analytics">
+          <input type="checkbox" id="cookie-analytics" checked>
           <span class="cookie-slider"></span>
         </label>
       </div>
@@ -3716,7 +3659,7 @@
           <span class="cookie-preference-detail">Used to deliver relevant advertisements.</span>
         </div>
         <label class="cookie-toggle">
-          <input type="checkbox" id="cookie-marketing">
+          <input type="checkbox" id="cookie-marketing" checked>
           <span class="cookie-slider"></span>
         </label>
       </div>

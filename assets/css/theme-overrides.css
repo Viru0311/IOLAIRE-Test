@@ -8,15 +8,24 @@
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* 1. Totally New Hero Background */
+/* 1. Hero: content-only uses light bg; legacy hero uses gradient */
 .frame-section_wr.is-hero {
-    background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, var(--dark-bg) 70%) !important;
     min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
+}
+.global_section--small.is-hero.hero-content-only {
+    background: #f8fafc !important;
+    min-height: 50vh !important;
+}
+.frame-section_wr.is-hero:has(.hero-content-only)::before {
+    display: none !important;
+}
+.frame-section_wr.is-hero .global_section--small.is-hero:not(.hero-content-only) {
+    background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, var(--dark-bg) 70%) !important;
 }
 
 /* Add a subtle animated mesh/glow effect */
@@ -85,6 +94,23 @@
 }
 
 .hero-highlight {
+    font-weight: 700 !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
+}
+/* Content-only hero: blue title, black text */
+.global_section--small.is-hero.hero-content-only .hero-highlight {
+    color: #2563eb !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+}
+.global_section--small.is-hero.hero-content-only .span_line-2,
+.global_section--small.is-hero.hero-content-only .hero-description {
+    color: #0f172a !important;
+}
+.global_section--small.is-hero:not(.hero-content-only) .hero-highlight {
     background: linear-gradient(90deg, #818cf8, #c084fc) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
@@ -92,9 +118,6 @@
     font-size: 1.25rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.2em !important;
-    font-weight: 700 !important;
-    display: block !important;
-    margin-bottom: 1rem !important;
     text-align: left !important;
     margin-left: 0 !important;
 }
